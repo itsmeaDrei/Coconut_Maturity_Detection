@@ -5,77 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coconut Maturity Detection</title>
     <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">-->
-    <link href="static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <h1>Coconut Maturity Detection</h1>
-            <label for="fileInput" class="upload-box">Click to upload an image</label>
-            <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
-            <img id="previewImage" class="preview-image hidden" src="" alt="Uploaded Image">
-            <button class="btn" onclick="analyzeImage()">Analyze</button>
-        </div>
-        <div class="right">
-            <h2>Results</h2>
-            <div class="results-container">
-                <p id="resultsText">Processing...</p>
-                <img id="processedImage" class="preview-image hidden" src="" alt="Processed Image">
+
+    <section class = "home">
+        <h1>Home</h1>
+    </section>
+
+    <section class="system">
+  
+        <div class="container">
+            <div class="left">
+                <h1>Coconut Maturity Detection</h1>
+                <label for="fileInput" class="upload-box">Click to upload an image</label>
+                <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+                <img id="previewImage" class="preview-image hidden" src="" alt="Uploaded Image">
+                <button class="btn" onclick="analyzeImage()">Analyze</button>
+            </div>
+            <div class="right">
+                <h2>Results</h2>
+                <div class="results-container">
+                    <p id="resultsText">Processing...</p>
+                    <img id="processedImage" class="preview-image hidden" src="" alt="Processed Image">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        function previewImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById("previewImage").src = e.target.result;
-                    document.getElementById("previewImage").classList.remove("hidden");
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function analyzeImage() {
-            const fileInput = document.getElementById("fileInput");
-            if (!fileInput.files.length) return alert("Please select an image first!");
-
-            const formData = new FormData();
-            formData.append("file", fileInput.files[0]);
-
-            document.getElementById("resultsText").innerText = "Analyzing...";
-
-            fetch("/analyze", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    document.getElementById("resultsText").innerText = data.error;
-                    return;
-                }
-
-                // Prevent browser caching
-                const timestamp = new Date().getTime();
-                document.getElementById("processedImage").src = data.image_url + "?t=" + timestamp;
-                document.getElementById("processedImage").classList.remove("hidden");
-
-                // Display results
-                let resultText = "<h3>Detection Counts:</h3>";
-                resultText += `<p>Stage 1: ${data.results.stage1}</p>`;
-                resultText += `<p>Stage 2: ${data.results.stage2}</p>`;
-                resultText += `<p>Stage 3: ${data.results.stage3}</p>`;
-                resultText += `<p>Total Coconuts: ${data.results.total}</p>`;
-                document.getElementById("resultsText").innerHTML = resultText || "No coconuts detected.";
-            })
-            .catch(error => {
-                document.getElementById("resultsText").innerText = "Error processing image.";
-                console.error("Error:", error);
-            });
-        }
-    </script>
 </body>
 </html>
