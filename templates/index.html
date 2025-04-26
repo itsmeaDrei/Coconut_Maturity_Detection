@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coconut Maturity Detection</title>
-    <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    
 </head>
 <body>
 
@@ -16,20 +14,22 @@
     </section>
 
     <section class="system">
-  
         <div class="container">
             <div class="left">
                 <h1>Coconut Maturity Detection</h1>
-                <label for="fileInput" class="upload-box">Click to upload an image</label>
-                <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
                 <img id="previewImage" class="preview-image hidden" src="" alt="Uploaded Image">
+                <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+                <label for="fileInput" class="upload-box">Click to upload an image</label>
                 <button class="btn" onclick="analyzeImage()">Analyze</button>
             </div>
+            
             <div class="right">
-                <h2>Results</h2>
+                <h1>Results</h1>
                 <div class="results-container">
-                    <p id="resultsText">Processing...</p>
-                    <img id="processedImage" class="preview-image hidden" src="" alt="Processed Image">
+                    <div class="result-card">
+                        <img id="processedImage" class="hidden" alt="Processed Coconut" />
+                    </div>
+                    <div id="resultsText"></div> <!-- Moved OUTSIDE the card -->
                 </div>
             </div>
         </div>

@@ -10,9 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #121212;
+    background: #ffffff;
 }
-
 
 
 
@@ -26,50 +25,57 @@ body {
     background-color: #121212;
 }
 
-.system{
+.system {
     width: 100%;
-    height: 100vh;
-    flex: 1;
-
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 10%;
+    align-items: flex-start;
+    padding: 2% 10%;
+    box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    
-    padding: 30px;
+.system .container {
+    background: #f5f5f5; /* Light gray background for contrast */
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    max-width: 1200px;
     width: 100%;
+    padding: 3% 2%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .left, .right {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1, h2 {
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 20px;
+.left h1, .right h1 {
+    font-size: 200%;
+    color: #333333; /* Darker text */
+    margin-bottom: 5%;
+    text-align: center;
 }
 
-.upload-box {
+.left .upload-box {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #9ea89e;
     color: white;
-    padding: 10px 20px;
+    padding: 4% 10%;
     cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-size: 120%;
+    text-align: center;
 }
 
-.upload-box:hover {
-    background: rgba(255, 255, 255, 0.2);
+.left .upload-box:hover {
+    background-color: #9ea89e;
 }
 
 #fileInput {
@@ -77,28 +83,56 @@ h1, h2 {
 }
 
 .preview-image {
-    max-width: 100%;
     margin-top: 20px;
+    max-width: 500px;    /* Fixed width */
+    max-height: 300px;   /* Fixed height */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #ddd;
+    padding: 20px;
 }
 
 .btn {
-    background: #007bff;
+    background-color: #9ea89e;
     color: white;
     border: none;
-    padding: 12px 18px;
-    border-radius: 6px;
+    padding: 4% 10%;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 120%;
+    margin-top: 1%;
     transition: 0.3s;
-    width: 100%;
+    width: 80%;
+    text-align: center;
 }
 
 .btn:hover {
-    background: #0056b3;
+    background-color: #9ea89e;
 }
 
 .results-container {
-    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.result-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#processedImage {
+    max-width: 200px; /* Make it bigger! */
+    width: 100%;
+    border-radius: 15px;
+}
+#resultsText {
+    text-align: center;
+    margin-top: 10px;
 }

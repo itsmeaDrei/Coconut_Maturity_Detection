@@ -105,10 +105,14 @@ def analyze_image():
         stage1_count = 0
         stage2_count = 0
         stage3_count = 0
+        confidence = []
 
         for box in boxes:
             cls_id = int(box.cls[0])
             label = class_names[cls_id] if class_names else f"id:{cls_id}"
+
+            # Collecting confidence for each box
+            confidence.append(box.conf[0].item())
 
             if label == "stage1":
                 stage1_count += 1
@@ -117,11 +121,15 @@ def analyze_image():
             elif label == "stage3":
                 stage3_count += 1
 
+        # Calculate average confidence if there are any detections
+        average_confidence = sum(confidence) / len(confidence) if confidence else 0
+
         results_data = {
             "stage1": stage1_count,
             "stage2": stage2_count,
             "stage3": stage3_count,
-            "total": len(boxes)
+            "total": len(boxes),
+            "confidence": round(average_confidence * 100, 2)  # Adding confidence percentage
         }
 
         return jsonify({

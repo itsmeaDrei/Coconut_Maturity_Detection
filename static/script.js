@@ -30,18 +30,24 @@ function analyzeImage() {
             return;
         }
 
-        // Prevent browser caching
+        // Update the processed image
+        const processedImage = document.getElementById("processedImage");
         const timestamp = new Date().getTime();
-        document.getElementById("processedImage").src = data.image_url + "?t=" + timestamp;
-        document.getElementById("processedImage").classList.remove("hidden");
+        processedImage.src = data.image_url + "?t=" + timestamp;
+        processedImage.classList.remove("hidden");
 
-        // Display results
-        let resultText = "<h3>Detection Counts:</h3>";
-        resultText += `<p>Stage 1: ${data.results.stage1}</p>`;
-        resultText += `<p>Stage 2: ${data.results.stage2}</p>`;
-        resultText += `<p>Stage 3: ${data.results.stage3}</p>`;
-        resultText += `<p>Total Coconuts: ${data.results.total}</p>`;
-        document.getElementById("resultsText").innerHTML = resultText || "No coconuts detected.";
+        // Set results text (with confidence level)
+        const resultsContainer = document.getElementById("resultsText");
+        resultsContainer.innerHTML = `
+            <div>
+                <h3>Detection Results</h3>
+                <p><strong>Stage 1:</strong> ${data.results.stage1}</p>
+                <p><strong>Stage 2:</strong> ${data.results.stage2}</p>
+                <p><strong>Stage 3:</strong> ${data.results.stage3}</p>
+                <p><strong>Total Coconuts:</strong> ${data.results.total}</p>
+                <p><strong>Average Confidence Level:</strong> ${data.results.confidence}%</p>
+            </div>
+        `;
     })
     .catch(error => {
         document.getElementById("resultsText").innerText = "Error processing image.";
