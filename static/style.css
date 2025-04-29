@@ -156,6 +156,7 @@ html {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .home-content button {
     padding: 12px 30px;
     background: #ffffff;
@@ -178,6 +179,8 @@ html {
 /* ----------------------------------- SYSTEM --------------------------------------------------------- */
 
 
+=======
+>>>>>>> ae70cbb (add new page)
 =======
 >>>>>>> ae70cbb (add new page)
 .system {
@@ -307,10 +310,13 @@ html {
     color: #34495e;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 /* ----------------------------------- RESPONSIVE FOR DEVICES --------------------------------------------- */
 =======
+=======
+>>>>>>> ae70cbb (add new page)
 .contact {
     height: 90vh;
     width: 100%;
@@ -383,6 +389,9 @@ html {
     margin-top: 3%;
     font-size: 70%;
 }
+<<<<<<< HEAD
+>>>>>>> ae70cbb (add new page)
+=======
 >>>>>>> ae70cbb (add new page)
 @media (max-width: 768px) {
     .header {
@@ -425,6 +434,7 @@ html {
         .home-content button{
             font-size: 0.9rem;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
     }
 /* ----------------------------------- RESPONSIVE FOR DEVICES --------------------------------------------- */
@@ -470,6 +480,9 @@ html {
             font-size: 0.9rem;
         }
     }
+=======
+    }
+>>>>>>> ae70cbb (add new page)
 =======
     }
 >>>>>>> ae70cbb (add new page)
