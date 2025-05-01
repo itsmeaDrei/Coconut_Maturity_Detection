@@ -18,14 +18,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2%;
+    padding: 1.5%;
     display: flex;
     justify-content: right;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     color: white;
     width: 100%;
-    padding: 2%;
     display: flex;
     justify-content: right;
     background: rgba(0, 0, 0, 0.3);
@@ -132,6 +131,8 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* --------------------------------------- ABOUT --------------------------------------- */
 .about {
     display: flex;
     justify-content: center;
@@ -219,7 +220,7 @@ html {
     object-fit: cover;
 }
 
-/* ----------------------------------- SYSTEM --------------------------------------------------------- */
+/* --------------------------------------- SYSTEM --------------------------------------- */
 .system {
     background: #f0f2f5;
     width: 100%;
@@ -344,6 +345,8 @@ html {
     text-align: center;
     margin-top: 10px;
 }
+
+/* --------------------------------------- CONTACT --------------------------------------- */
 .contact {
     height: 94vh;
     height: 94vh;
