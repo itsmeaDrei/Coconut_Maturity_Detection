@@ -265,7 +265,7 @@ html {
 }
 
 .left .upload-box {
-    background-color: #6c7ae0; /* Soft vibrant color */
+    background-color: #6c7ae0; 
     color: white;
     padding: 15px 30px;
     cursor: pointer;
@@ -337,7 +337,7 @@ html {
 }
 #processedImage {
     max-width: 200px; 
-    max-height: 240px;
+    max-height: 250px;
     width: 100%;
     border-radius: 15px;
 }
