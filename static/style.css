@@ -8,22 +8,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #ffffff;
+    background: white;
 }
 
 /* ----------------------------------- HOME --------------------------------------------------------- */
 .header {
     position: fixed;
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 1.5%;
-    display: flex;
-    justify-content: right;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    color: white;
     width: 100%;
     display: flex;
     justify-content: right;
@@ -31,7 +23,6 @@ body {
     backdrop-filter: blur(5px);
     color: white;
     z-index: 10;
-    transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -137,7 +128,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/static/images/aboutbg.avif');
+    background-image: url('/static/images/aboutbg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -153,7 +144,7 @@ html {
 .about-content {
     flex: 1;
     text-align: center;
-    max-width: 600px;
+    max-width: 70%;
 }
 
 
@@ -178,34 +169,12 @@ html {
     display: flex;
     gap: 10%;
     justify-content: center;
+    flex-wrap: nowrap; 
 }
 
 .about .image-box {
-    width: 50%;
-    height: 230px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.about .image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.about .images {
-    flex: 1;
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-}
-
-.about .image-box {
-    width: 50%;
-    height: 230px;
+    width: 45%; 
+    height: 18.75rem; 
     background-color: #ccc;
     display: flex;
     align-items: center;
@@ -345,108 +314,79 @@ html {
     text-align: center;
     margin-top: 10px;
 }
-
-/* --------------------------------------- CONTACT --------------------------------------- */
+/* ----------------------------------- Contact --------------------------------------------------------- */
 .contact {
-    height: 94vh;
     height: 94vh;
     width: 100%;
     padding: 40px 20px;
-    background-color: #ccc;
+    background-color: black;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 0;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 0;
-    padding-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
-  .contact .container {
-    max-width: 1000px;
-    width: 100%;
-    width: 100%;
+   .container{
+    padding: 40px 30px;
+    background-color: white;
+    border-radius: 20px;
+    max-width: 700px;   
+    width: 40%;        
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
+    box-shadow: none;
+  }
+  .left{
+    background-color: white;
   }
   
   .contact .left h2 {
-    text-align: center; 
-    text-align: center; 
-    font-size: 28px;
-    color: #2c7a2c;
-    padding-bottom: 2%;
-    padding-bottom: 2%;
+    font-size: 2.5rem;
+    color:#333;
+    margin-bottom: 10px;
   }
   
   .contact .left p {
     font-size: 16px;
     color: #333;
     max-width: 600px;
-    margin: 0 auto; 
-    text-align: center;
-    padding-bottom: 5%;
-    margin: 0 auto; 
-    text-align: center;
-    padding-bottom: 5%;
+    margin-bottom: 0rem;
+  }
+  .column{
+    color: black;
   }
   
-  .contact .info-columns {
+  .contact-icons {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: center;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-    text-align: center;
+    gap: 50px;
+    margin-top: 10px;
   }
   
-  .contact .column {
-    flex: 1;
-    min-width: 220px;
+  .contact-icons a img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
   }
   
-  .contact h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #222;
+  .contact-icons a img:hover {
+    transform: scale(1.15);
   }
   
-  .contact ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contact li {
-    margin-bottom: 8px;
-  }
-  
-  .contact a {
-    color: #1d4ed8;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .contact a:hover {
-    color: #2563eb;
-    text-decoration: underline;
-  }
-   .bottom {
+  .bottom {
     background-color: black;
     text-align: center;
     color: white;
     padding: 15px 2%;
     font-size: 70%;
     width: 100%;
-    margin-top: 40px;
-    margin-top: 0;
+    margin: 0;
+  }  
+  .hidden {
+    display: none;
   }
   
 @media (max-width: 768px) {
@@ -502,11 +442,25 @@ html {
             font-size: 0.7rem;
         }
         
-        .images {
+        .about .images {
+            flex-direction: column;
             align-items: center;
+            gap: 20px; 
+        }
+    
+        .about .image-box {
+            width: 90%; 
+            height: auto; 
+        }
+    
+        .about .image-box img {
+            height: auto; 
         }
         .contact{
             height: 95vh;
+        }
+        .contact .container {
+            width: 80%;
         }
         .info-columns {
            text-align: center;
@@ -525,4 +479,18 @@ html {
         .contact .left p {
             font-size: 0.7rem;
         }
+        .contact-icons {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+          }
+        
+          .contact-icons a img {
+            width: 30px;
+            height: 30px;
+          }
+        
+          .contact-icons h3 {
+            font-size: 0.95rem;
+          }
     }
