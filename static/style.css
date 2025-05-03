@@ -18,6 +18,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    padding: 1.1%;
     display: flex;
     justify-content: right;
     background: rgba(0, 0, 0, 0.3);
@@ -208,25 +209,24 @@ html {
     background: #ffffff;
     border-radius: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     gap: 4%;
-    max-width: 1300px;
+    max-width: 1000px;
     width: 100%;
-    padding: 2% 3%;
+    padding: 2%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .left, .right {
-    flex: 1;
+    flex: 2;
+    border-radius: 20px;
+    padding: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 2%;
-    background: #f9f9f9;
-    border-radius: 20px;
 }
 
 .left h1, .right h1 {
@@ -234,6 +234,7 @@ html {
     color: #2c3e50;
     margin-bottom: 3%;
     font-weight: 600;   
+    text-align: center;
 }
 
 .left .upload-box {
@@ -259,13 +260,13 @@ html {
 }
 
 .preview-image {
-    max-width: 400px;
-    max-height: 220px;
+    max-width: 100%;
+    max-height: 55vh;
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
-    background: #ecf0f1;
+    background: #f9f9f9;
     padding: 3%;
 }
 
@@ -308,8 +309,8 @@ html {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 #processedImage {
-    max-width: 200px; 
-    max-height: 250px;
+    max-width: 100%;
+    max-height: 55vh;
     width: 100%;
     border-radius: 15px;
 }
@@ -459,6 +460,9 @@ html {
     
         .about .image-box img {
             height: auto; 
+        }
+        .system .container {
+            flex-direction:column; 
         }
         .contact{
             height: 95vh;
