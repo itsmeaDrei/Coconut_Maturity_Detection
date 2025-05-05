@@ -3,7 +3,7 @@ import cv2
 from ultralytics import YOLO
 
 # Path to the YOLOv5 model weights
-MODEL_PATH = "yolov5.pt"
+MODEL_PATH = "yoloversions/yolov5.pt"
 try:
     model = YOLO(MODEL_PATH)
     print(f"Model loaded from {MODEL_PATH}")

@@ -22,7 +22,8 @@ body {
     display: flex;
     justify-content: right;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     color: white;
     z-index: 10;
     transition: all 0.3s ease;
@@ -77,11 +78,10 @@ body {
 }
 
 .home-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: #ffffff;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 0rem;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     font-family:serit-Didone; 
 }
@@ -90,13 +90,13 @@ body {
     font-size: 4.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0rem;
+    margin-bottom: 1%;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
     font-family:serit-Didone; 
 }
 
 .home-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #dddddd; 
     margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
@@ -107,7 +107,7 @@ body {
     padding: 12px 30px;
     background: #ffffff;
     color: #333333;
-    border: none;
+    border: 2px solid white;
     cursor: pointer;
     border-radius: 50px;
     font-weight: 60%;
@@ -119,6 +119,7 @@ body {
 
 .home-content button:hover {
     background: transparent;
+    border: 2px solid white;
     color: #ffffff;
 }
 html {
@@ -146,6 +147,7 @@ html {
 .about-content {
     flex: 1;
     text-align: center;
+    margin-bottom: 10%;
     max-width: 70%;
 }
 
@@ -154,14 +156,15 @@ html {
     font-size: 4.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 .about-content p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #dddddd;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -175,10 +178,8 @@ html {
 }
 
 .about .image-box {
-    width: 45%; 
-    height: 18.75rem; 
-    width: 45%; 
-    height: 18.75rem; 
+    width: 40%; 
+    height: 25rem;  
     background-color: #ccc;
     display: flex;
     align-items: center;
@@ -195,7 +196,10 @@ html {
 
 /* --------------------------------------- SYSTEM --------------------------------------- */
 .system {
-    background: #f0f2f5;
+    background-image: url('/static/images/herobg.jpg'); 
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -206,7 +210,9 @@ html {
 }
 
 .system .container {
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -227,11 +233,13 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
 }
 
 .left h1, .right h1 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: white;
     margin-bottom: 3%;
     font-weight: 600;   
     text-align: center;
@@ -281,7 +289,7 @@ html {
     margin-top: 1%;
     margin-bottom: 2%;
     transition: 0.3s;
-    width: 90%;
+    width: 65%;
     text-align: center;
     box-shadow: 0 4px 10px rgba(108, 122, 224, 0.4);
 }
@@ -320,7 +328,7 @@ html {
 }
 /* ----------------------------------- Contact --------------------------------------------------------- */
 .contact {
-    height: 94vh;
+    height: 96vh;
     width: 100%;
     padding: 40px 20px;
     background-color: black;
@@ -342,18 +350,14 @@ html {
     gap: 20px;
     box-shadow: none;
   }
-  .left{
-    background-color: white;
-  }
-  
   .contact .left h2 {
     font-size: 2.5rem;
     color:#333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   
   .contact .left p {
-    font-size: 16px;
+    font-size: 20px;
     color: #333;
     max-width: 600px;
     margin-bottom: 0rem;
@@ -368,7 +372,6 @@ html {
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
-    margin-top: 10px;
   }
   
   .contact-icons a img {
@@ -454,15 +457,18 @@ html {
         }
     
         .about .image-box {
-            width: 90%;
+            width: 70%;
             height: auto;
         }
     
         .about .image-box img {
-            height: auto; 
+            height: 30%; 
         }
         .system .container {
             flex-direction:column; 
+        }
+        .btn {
+            width: 55%;
         }
         .contact{
             height: 95vh;
