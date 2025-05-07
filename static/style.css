@@ -131,7 +131,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/static/images/aboutbg.jpg');
+    background-image: url('/static/images/aboutbg1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -147,7 +147,7 @@ html {
 .about-content {
     flex: 1;
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
     max-width: 70%;
 }
 
@@ -157,14 +157,14 @@ html {
     font-weight: 700;
     color: #ffffff;
     margin-top: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2%;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 .about-content p {
     font-size: 1.3rem;
     color: #dddddd;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2%;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -179,7 +179,7 @@ html {
 
 .about .image-box {
     width: 40%; 
-    height: 25rem;  
+    height: 45vh;  
     background-color: #ccc;
     display: flex;
     align-items: center;
@@ -196,7 +196,7 @@ html {
 
 /* --------------------------------------- SYSTEM --------------------------------------- */
 .system {
-    background-image: url('/static/images/herobg.jpg'); 
+    background-image: url('/static/images/view-in-front-of-the.jpg'); 
     background-size: cover;        
     background-position: center;   
     background-repeat: no-repeat;
@@ -356,7 +356,7 @@ html {
   .contact .left h2 {
     font-size: 2.5rem;
     color:#333;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
   
   .contact .left p {
@@ -374,7 +374,7 @@ html {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 70px;
   }
   
   .contact-icons a img {
